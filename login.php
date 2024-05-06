@@ -1,5 +1,5 @@
 <?php 
-require_once('config.php');
+require_once('config/config.php');
 
 if(isset($_GET['login'])) {
     $errorMessage = user_cheack_login($_POST['username'], $_POST['password']);
