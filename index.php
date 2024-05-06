@@ -1,11 +1,5 @@
 <?php 
 require_once('config/config.php');
-
-if(isset($_GET['login'])) {
-    $errorMessage = user_cheack_login($_POST['username'], $_POST['password']);
-}
-
-$__curpage = basename($_SERVER['PHP_SELF']);
 ?>
 
 
@@ -22,10 +16,10 @@ $__curpage = basename($_SERVER['PHP_SELF']);
 
   <div class="collapse navbar-collapse" id="navmain">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class="nav-item active">
           <a class="nav-link" href="index.php">Startseite</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
           <a class="nav-link" href="login.php">Anmelden <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -56,29 +50,36 @@ $__curpage = basename($_SERVER['PHP_SELF']);
         <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
         <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
 
-        <div class="card bg-glass">
-          <div class="card-body px-4 py-5 px-md-5">
-          <form action="?login=1" id="login-form" method="post">
-                    
-                    <?php 
-                        if(isset($errorMessage)) {
-                            echo $errorMessage;
-                        }
-                        ?>
-                        <div data-mdb-input-init class="form-outline mb-4">
-                        <input type="text" name="username" id="username"  class="form-control form-control-lg />
-                        <label class="form-label" for="username">Email address</label>
-                        </div>
-    
-                        <div data-mdb-input-init class="form-outline mb-4">
-                        <input type="password" name="password" id="password" class="form-control form-control-lg" required="required">   
-                        <label class="form-label" for="password">Password</label>
-                        </div>
-                
-                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
-                        Login
-                        </button>
-                    </form>
+        <div class="card bg-glass ">
+          <div class="card-body px-4 py-5 px-md text-start">
+            <p class="uppercase_muted text-start">Beratung</p>
+                <h2> Willkommen bei der Online-Beratung</h2>
+                <p>Wie läuft die Beratung ab?</p>
+                <div class="row py-3">
+                    <div class="col">
+                        <b>Einfache Registrierung</b><br><small>Für eine individuelle und geschützte Beratung</small>
+                    </div>
+                    <div class="col">
+                        <b>Nachricht verfassen</b><br><small>Sie schicken Ihre Nachricht verschlüsselt an die Beratung</small>
+                    </div>
+                </div>
+
+                <div class="row py-5">
+                    <div class="col">
+                    <b>Persönliche Beratung</b><br><small>Innerhalb von 2 Werktagen bekommen Sie eine Antwort</small>
+                    </div>
+                    <div class="col">
+                    <b>Anonym und kostenfrei</b><br><small>OpenPGP verschlüsselt und kostenfrei</small>
+                    </div>
+                </div>
+                <div class="row py-2">
+                <div class="col">
+                <a href="registration.php" type="button" class="btn btn-primary btn-lg btn-block">Regestrieren</a>
+                    </div>
+                    <div class="col">
+                    <a href="login.php" type="button" class="btn btn-primary btn-lg btn-block">Anmelden</a>  
+                    </div>
+                </div>
           </div>
         </div>
       </div>
