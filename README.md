@@ -1,3 +1,3 @@
-# OEBS - open Elektronisches Beratung System
+# openECS - open eCotact System
 
-Ist ein einfache niederschwällige Beratungs System in PHP8 und SQL anbindung. Kostenlos für jeder man. 
+Ist ein einfache niederschwälliges Kontaktsystem, zb für eine Beratungsplatformen oder für eine Verschlüsselte, mit OpenGPG, Kunden Kontakte. 
