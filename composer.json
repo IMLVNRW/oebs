@@ -1,0 +1,13 @@
+{
+    "name": "roseleblood/openecs",
+    "description": "A simple crypted contact system under the gplv3",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "IMLVNRW",
+            "email": "webadmin.sec.56465189@im-nrw.de"
+        }
+    ],
+    "require": {}
+}
