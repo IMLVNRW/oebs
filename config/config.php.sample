@@ -1,20 +1,29 @@
 <?php 
-session_start();
-
-require_once('../classes/DBConnection.php');
-require_once('../classes/SystemSettings.php');
-require_once('../functions.php');
 
 if(!defined('base_url')) define('base_url','http://127.0.0.1/oebs/');
-if(!defined('base_app')) define('base_app', str_replace('\\','/',__DIR__).'/' );
-// if(!defined('dev_data')) define('dev_data',$dev_data);
 if(!defined('DB_SERVER')) define('DB_SERVER',"127.0.0.1");
 if(!defined('DB_USERNAME')) define('DB_USERNAME',"");
 if(!defined('DB_PASSWORD')) define('DB_PASSWORD',"");
 if(!defined('DB_NAME')) define('DB_NAME',"oebs_main");
 
+if(!defined('OEBS_SKIN')) define('OEBS_SKIN',"default");
+if(!defined('OEBS_NAVBRAND')) define('OEBS_NAVBRAND', "OpenECS");
 
-$db = new DBConnection;
-$conn = $db->conn;
+
+if(!defined('OEBS_APP_NAME')) define('OEBS_APP_NAME', "OpenECS");
+if(!defined('OEBS_APP_SUBNAME')) define('OEBS_APP_SUBNAME', "Open eContact System");
+
+//!!! DO NOT EDIT AFTER THIS LINE !!!!
+
+function oe_create_global_var() {
+  $ar = array();
+  $ar[] =  new oe_varibale_holder("{% OEBS_SKIN_PATH %}" , "assets/skin/" . OEBS_SKIN . "/", "string");
+  $ar[] =  new oe_varibale_holder("{% OEBS_SKIN_DATE %}" , date("YmdH"), "string");
+  $ar[] =  new oe_varibale_holder("{% OEBS_NAV_BRAND %}" , OEBS_NAVBRAND, "string"); 
+  $ar[] =  new oe_varibale_holder("{% OEBS_APP_TITLE %}" , OEBS_APP_NAME, "string");
+  $ar[] =  new oe_varibale_holder("{% OEBS_APP_SUBTITLE %}" , OEBS_APP_SUBNAME, "string");
+
+  return $ar;
+}
 
 ?>

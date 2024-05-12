@@ -1,6 +1,6 @@
 <?php 
 
-require_once ("logic/db/oebs_dbtable.php");
+require_once ("logic/db/oe_dbtable.php");
 
 class db_user {
     private $data;
@@ -16,7 +16,14 @@ class db_user {
     public function get_tocken() { return $this->data["u_tocken"]; }
     public function get_last_login() { return $this->data["u_lastlogin"]; }
     public function get_create_stamp() { return $this->data["u_create"]; }
+    public function get_email() { return $this->data["u_email"]; }
+    public function get_username() { return $this->data["u_name"]; }
     public function is_active() { return $this->data["u_active"];}
+
+    public function set_last_login() {
+        $_sql = "UPDATE oebs_user SET u_lastlogin=NOW() WHERE u_id = {$this->data["u_id"]}";
+        $this->connection->query($_sql );
+    }
 }
 
 class db_table_user extends db_table {
@@ -34,7 +41,6 @@ class db_table_user extends db_table {
             $ret[$i] = new db_user($field, $this->connection );
             $i++;
         }   
-        var_dump($ret);
 
         return $ret;
     }

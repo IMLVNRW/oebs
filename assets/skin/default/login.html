@@ -1,7 +1,6 @@
 
 
 
-  <main role="main" >
 
 <section class="overflow-hidden">
 
@@ -9,8 +8,8 @@
     <div class="row gx-lg-5 align-items-center mb-5">
       <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
         <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-          Open EBS<br />
-          <span style="color: hsl(218, 81%, 75%)">Beratung & Hilfe </span>
+          {% OEBS_APP_TITLE %}<br />
+          <span style="color: hsl(218, 81%, 75%)">{% OEBS_APP_SUBTITLE %}</span>
         </h1>
         <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
         Online. Anonym. Sicher.
@@ -24,14 +23,9 @@
         <div class="card bg-glass">
           <div class="card-body px-4 py-5 px-md-5">
           <form action="?login=1" id="login-form" method="post">
-                    
-                    <?php 
-                        if(isset($errorMessage)) {
-                            echo $errorMessage;
-                        }
-                        ?>
+
                         <div data-mdb-input-init class="form-outline mb-4">
-                        <input type="text" name="username" id="username"  class="form-control form-control-lg />
+                        <input type="text" name="username" id="username"  class="form-control form-control-lg" />
                         <label class="form-label" for="username">Email address</label>
                         </div>
     
@@ -53,11 +47,5 @@
 <!-- Section: Design Block -->
 
 
-</main>
-
-</body>
-
-
-</html>
 
                 
