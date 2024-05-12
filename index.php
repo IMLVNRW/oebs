@@ -23,7 +23,7 @@ class oe_visual_home extends oe_visual_index {
     public function __construct($global_var) {
         parent::__construct($global_var);
 
-        $this->add_visual("OEBS_CONTENT_HTML", new oe_visual("start.html"));
+        $this->add_visual("OEBS_CONTENT_HTML", new oe_visual("start.html", $global_var));
         $this->add_visual("OEBS_CONTENT_HEADER", new oe_visual_home_menu( $global_var));
         $this->add_visual("OEBS_CONTENT_FOOTER", new oe_visual("footer.html", $global_var));
 

@@ -11,13 +11,13 @@ class oe_visual_login_menu extends oe_visual_top_menu {
         parent::__construct($global_var);
 
         $this->add(new oe_visual_top_menu_entry("index.php", "Startseite", false, $global_var ) );
-        $this->add(new oe_visual_top_menu_entry("login.php", "Login", true, $global_var ) );
-        $this->add(new oe_visual_top_menu_entry("signup.php", "Regestrieren", false, $global_var ) );
+        $this->add(new oe_visual_top_menu_entry("login.php", "Anmelden", true, $global_var ) );
+        $this->add(new oe_visual_top_menu_entry("signup.php", "Registrieren", false, $global_var ) );
     }
 }
 class oe_visual_login extends oe_visual_index {
 
-    public function __construct($skin_name, $global_var) {
+    public function __construct($global_var) {
         parent::__construct($global_var);
 
         $this->add_visual("OEBS_CONTENT_HTML", new oe_visual("login.html", $global_var ));
@@ -37,9 +37,9 @@ class oe_visual_login extends oe_visual_index {
     }
 }
 
-$visual = new oe_visual_login("default", oe_create_global_var() );
+$visual = new oe_visual_login(oe_create_global_var() );
 
-$visual->begin("default");
+$visual->begin();
 $visual->update();
 
 $visual->swap();

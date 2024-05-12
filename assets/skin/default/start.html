@@ -4,8 +4,8 @@
       <div class="row gx-lg-5 align-items-center mb-5">
         <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
           <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-            Open EBS<br />
-            <span style="color: hsl(218, 81%, 75%)">Beratung & Hilfe </span>
+            {% OEBS_APP_TITLE %} <br />
+            <span style="color: hsl(218, 81%, 75%)">{% OEBS_APP_SUBTITLE %} </span>
           </h1>
           <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
           Online. Anonym. Sicher.
@@ -18,26 +18,27 @@
   
           <div class="card bg-glass ">
             <div class="card-body px-4 py-5 px-md text-start">
-              <p class="uppercase_muted text-start">Beratung</p>
-                  <h2> Willkommen bei der Online-Beratung</h2>
-                  <p>Wie läuft die Beratung ab?</p>
+              <p class="uppercase_muted text-start">Kontakt</p>
+                  <h2> Willkommen bei {% OEBS_APP_TITLE %} </h2>
+                  
                   <div class="row py-3">
                       <div class="col">
-                          <b>Einfache Registrierung</b><br><small>Für eine individuelle und geschützte Beratung</small>
+                          <b>Einfache Registrierung</b><br><small>Für eine individuelle und sicheren Kontakt</small>
                       </div>
                       <div class="col">
-                          <b>Nachricht verfassen</b><br><small>Sie schicken Ihre Nachricht verschlüsselt an die Beratung</small>
+                          <b>Nachricht verfassen</b><br><small>Sie schicken Ihre Nachricht verschlüsselt an uns</small>
                       </div>
                   </div>
   
                   <div class="row py-5">
                       <div class="col">
-                      <b>Persönliche Beratung</b><br><small>Innerhalb von 2 Werktagen bekommen Sie eine Antwort</small>
+                      <b>Persönlicher Kontakt</b><br><small>Innerhalb von 2 Werktagen bekommen Sie eine Antwort</small>
                       </div>
                       <div class="col">
                       <b>Anonym und kostenfrei</b><br><small>OpenPGP verschlüsselt und kostenfrei</small>
                       </div>
                   </div>
+                  <!--{% OEBS_PAGE_CONTENT %}-->
                   <div class="row py-2">
                   <div class="col">
                   <a href="registration.php" type="button" class="btn btn-primary btn-lg btn-block">Regestrieren</a>
